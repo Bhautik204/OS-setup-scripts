@@ -11,7 +11,7 @@ install_nodejs() {
         log_info "NVM already installed"
     else
         log_info "Installing NVM..."
-        run_as_user "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash"
+        run_as_user "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash"
         log_success "NVM installed"
     fi
     

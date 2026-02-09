@@ -2,7 +2,7 @@
 # Module: Java & Maven
 
 install_java() {
-    log_step "Installing Java 17 & Maven"
+    log_step "Installing Java 21 & Maven"
     
     # Check if already installed
     if is_installed java && is_installed mvn; then
@@ -12,13 +12,13 @@ install_java() {
         return 0
     fi
     
-    log_info "Installing OpenJDK 17 and Maven (batch mode)..."
+    log_info "Installing OpenJDK 21 and Maven (batch mode)..."
     
     # Batch install Java and Maven
     if [[ -n "$LOG_FILE" ]]; then
-        apt-get install -y openjdk-17-jdk maven 2>&1 | tee -a "$LOG_FILE"
+        apt-get install -y openjdk-21-jdk maven 2>&1 | tee -a "$LOG_FILE"
     else
-        apt-get install -y openjdk-17-jdk maven
+        apt-get install -y openjdk-21-jdk maven
     fi
     
     if [[ $? -ne 0 ]]; then
